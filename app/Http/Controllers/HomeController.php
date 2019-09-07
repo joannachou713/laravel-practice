@@ -35,7 +35,7 @@ class HomeController extends Controller
             return Redirect::back();
         }
         $keyword = $request->keyword;
-        $posts = PostEloquent::where('title', 'LIKE', '%$keyword%')->orderBy('created_at', 'DESC')->paginate(5);
+        $posts = PostEloquent::where('title', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->paginate(5);
         $post_types = PostTypeEloquent::orderBy('name', 'ASC')->get();
         $posts_total = PostEloquent::get()->count();
         return View::make('posts.index', compact('posts', 'post_types', 'posts_total', 'keyword'));

@@ -139,7 +139,7 @@
     <div class="row pt-2">
         <div class="col-md-8">
             @isset($keyword)
-            {{ $post->appends(['keyword'=>$keyword])->render() }}
+            {{ $posts->appends(['keyword'=>$keyword])->render() }}
             @else
             {{ $posts->render() }}
             @endisset

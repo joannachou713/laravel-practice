@@ -8,6 +8,7 @@ use App\Post as PostEloquent;
 use App\PostType as PostTypeEloquent;
 use View;
 use Redirect;
+use Auth;
 
 class PostTypesController extends Controller
 {
@@ -61,7 +62,7 @@ class PostTypesController extends Controller
         $posts = PostEloquent::where('type', $id)->orderBy('created_at', 'DESC')->paginate(5);
         $post_types = PostTypeEloquent::orderBy('name', 'ASC')->get();
         $posts_total = PostEloquent::get()->count();
-        return View::make('posts.index', compact('posts', 'post_types', 'posts_total','type'));
+        return View::make('posts.index', compact('posts', 'post_types', 'posts_total', 'type'));
     }
 
     /**
