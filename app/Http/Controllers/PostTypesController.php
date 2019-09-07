@@ -34,7 +34,7 @@ class PostTypesController extends Controller
      */
     public function create()
     {
-        return View::make('posts.types.create');
+        return View::make('posts.typecreate');
     }
 
     /**
@@ -73,7 +73,7 @@ class PostTypesController extends Controller
     public function edit($id)
     {
         $post_type = PostTypeEloquent::findOrFail($id);
-        return View::make('posts.types.edit', compact('post_type'));
+        return View::make('posts.typeedit', compact('post_type'));
     }
 
     /**

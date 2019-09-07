@@ -127,7 +127,7 @@
                 @endforeach
                 @auth
                 @if( Auth::user()->isAdmin() )
-                <a href="{{ route('types.create')}}" class="list-group-item list-group-item-action">建立新分類</a>
+                <a href="{{ route('types.create') }}" class="list-group-item list-group-item-action">建立新分類</a>
                 @endif
                 @endauth
             </div>
