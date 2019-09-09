@@ -16,8 +16,8 @@ Route::get('search', 'HomeController@search')->name('search');
 
 Auth::routes();
 
-Route::resource('posts', 'PostsController');
 Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
+Route::resource('posts', 'PostsController');
 Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store', 'destroy']]);
 
 // Route::prefix('users')->name('users.')->group(function () {

@@ -120,7 +120,7 @@
                     <span class="badge badge-secondary badge-pill">{{ $posts_total }}</span>
                 </a>
                 @foreach($post_types as $post_type)
-                <a href="{{ route('types.show',  ['id'=>$post_type->id] )}}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {{ (isset($type)) ? (($type->id == $post_type->id) ? 'active' : '' ) : '' }}">
+                <a href="{{ route('types.show',  ['id'=>$post_type->id]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {{ (isset($type)) ? (($type->id == $post_type->id) ? 'active' : '' ) : '' }}">
                     {{ $post_type->name }}
                     <span class="badge badge-secondary badge-pill">{{ $post_type->posts->count() }}</span>
                 </a>

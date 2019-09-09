@@ -12,6 +12,7 @@ use Auth;
 
 class PostTypesController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware(['auth', 'admin'], [
@@ -33,8 +34,7 @@ class PostTypesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         return View::make('posts.typecreate');
     }
 

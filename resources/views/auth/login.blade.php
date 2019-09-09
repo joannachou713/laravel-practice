@@ -67,7 +67,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mt-5">
                             <div class="col-md-8 offset-md-4">
                                 <p>{{ __('Login Through Other Authentications') }}</p>
                                 <a href="{{ route('social.redirect',['provider'=>'facebook']) }}" class="btn btn-md btn-primary btn-block">Facebook</a>

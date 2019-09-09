@@ -18,13 +18,13 @@ class AdminAuthenticate
     {
         $current_user = Auth::user();
         $id = $request->post;
-        if(!empty($current_user) && !empty($id)){
+        if(!empty($current_user) || !empty($id)){
             $post = $current_user->posts()->find($request->post);
             if($current_user->isAdmin() || !empty($post)){
                 return $next($request);
             }
         }
-        if($request->ajax() || $request->wantsJson()){
+        else if($request->ajax() || $request->wantsJson()){
             return response('您沒有權限操作此項目', 401);
         }
         else{
